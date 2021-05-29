@@ -7,12 +7,8 @@ console.log('client side js loaded.')
 
 //     })
 
-
     const weatherForm = document.querySelector('form')
     
-
-
-
     weatherForm.addEventListener('submit',(e)=>{
         e.preventDefault()
         
@@ -24,7 +20,7 @@ console.log('client side js loaded.')
         msg1.textContent='fetching weather...'
         msg2.textContent= ''
         
-            fetch('http://localhost:3000/weather?address=' + address).then((response)=>{
+            fetch('/weather?address=' + address).then((response)=>{
         
             response.json().then((data)=>{  
                 if (data.error) {          
